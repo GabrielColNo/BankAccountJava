@@ -1,51 +1,51 @@
-#Projet Simple de Système Bancaire en Java
+**Projet de Système Bancaire en Java**
 
-Ce projet est une application console simple qui simule les opérations de base d'un système bancaire. Il a été développé en Java et met en œuvre des concepts fondamentaux de la programmation orientée objet (POO), tels que les classes, l'héritage et la gestion des exceptions.
+Une application console simple pour simuler les opérations de base d'un système bancaire. Ce projet a été conçu pour mettre en pratique les concepts fondamentaux de la Programmation Orientée Objet (POO).
 
-Fonctionnalités
+**Table des matières**
 
-Création de comptes : Permet de créer des comptes courants ou des comptes épargne pour de nouveaux clients.
+- Fonctionnalités
+- Structure du Projet
+- Installation et Exécution
 
-Opérations de base : Dépôts et retraits sur les comptes existants.
+**Fonctionnalités**
 
-Consultation : Affichage du solde d'un compte à tout moment.
+- `Gestion des comptes` : Permet de créer des comptes courants ou des comptes épargne pour de nouveaux clients.
+- `Opérations bancaires` : Offre la possibilité d'effectuer des dépôts et des retraits sur les comptes existants.
+- `Consultation de solde` : Affiche le solde d'un compte à tout moment.
+- `Sécurité des opérations` : Utilise une exception personnalisée, SoldeInsuffisantException, pour empêcher les retraits qui dépasseraient le solde disponible, assurant ainsi la robustesse du programme.
+- `Fonctionnalité Bonus` (Compte Épargne) : Inclut une classe CompteEpargne qui hérite de CompteBancaire et ajoute une méthode pour calculer et ajouter des intérêts annuels.
+- `Fonctionnalité Bonus` (Historique) : Enregistre toutes les transactions (dépôts et retraits) dans un fichier texte nommé historique.txt.
 
-Gestion des erreurs : Utilise une exception personnalisée (SoldeInsuffisantException) pour empêcher les retraits qui dépasseraient le solde disponible, assurant ainsi la robustesse du programme.
+**Structure du Projet**
 
-Comptes Épargne (Bonus) : Une classe CompteEpargne hérite de CompteBancaire et ajoute une fonctionnalité de calcul et d'ajout d'intérêts annuels.
+Le code source est organisé de manière modulaire. Chaque fichier .java a une responsabilité unique :
+- `Client.java` : Modélise un client de la banque avec des informations de base comme le nom et l'adresse.
+- `CompteBancaire.java` : Représente la classe de base pour un compte bancaire. Elle contient la logique pour les opérations de dépôt, de retrait et de consultation.
+- `CompteEpargne.java` : Classe dérivée qui spécialise CompteBancaire. Elle y ajoute la notion de taux d'intérêt.
+- `SoldeInsuffisantException.jav` : Définit l'exception personnalisée qui est levée lorsqu'un retrait ne peut être effectué.
+- `GestionBancaire.java` : Classe principale contenant la méthode main. Elle gère l'interface utilisateur en mode console et orchestre les interactions entre les différents objets.
 
-Historique des transactions (Bonus) : Toutes les opérations (dépôts, retraits) sont enregistrées avec la date et l'heure dans un fichier historique.txt.
+**Installation et Exécution**
 
-Structure du Projet
+- Ce projet ne requiert aucune dépendance externe. Seul un JDK (Java Development Kit) est nécessaire pour la compilation et l'exécution.
 
-Le code source est réparti dans les fichiers suivants :
+**1. Prérequis**
 
-Client.java : Modélise un client avec son nom et son adresse.
+Assurez-vous que Java est installé sur votre système et que les commandes javac et java sont accessibles depuis votre terminal.
 
-CompteBancaire.java : Classe de base pour un compte bancaire, gérant les opérations principales.
+**2. Compilation**
 
-CompteEpargne.java : Classe dérivée qui spécialise CompteBancaire avec un taux d'intérêt.
+Ouvrez un terminal, naviguez jusqu'au répertoire contenant les fichiers sources et exécutez la commande suivante pour compiler tous les fichiers .java :
 
-SoldeInsuffisantException.java : L'exception personnalisée pour la gestion des erreurs métier.
-
-GestionBancaire.java : La classe principale avec la méthode main(), qui gère le menu interactif en console et la logique de l'application.
-
-Comment Compiler et Exécuter
-
-Ce projet ne nécessite aucune dépendance externe, seulement un JDK (Java Development Kit) installé.
-
-Placez tous les fichiers .java dans le même répertoire.
-
-Ouvrez un terminal ou une invite de commandes et naviguez jusqu'à ce répertoire.
-
-Compilez tous les fichiers Java avec la commande suivante :
-
-javac *.java
+`javac *.java`
 
 
-Exécutez le programme principal avec la commande :
+**3. Exécution**
 
-java GestionBancaire
+Une fois la compilation terminée sans erreur, lancez le programme avec la commande :
+
+`java GestionBancaire`
 
 
-Le menu interactif s'affichera dans la console, vous guidant à travers les différentes options.
+Le menu interactif de l'application s'affichera alors dans la console.
